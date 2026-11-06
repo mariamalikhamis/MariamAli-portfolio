@@ -3,7 +3,7 @@ import { dictionaries, isLocale, links } from '@/content/i18n';
 import { projects } from '@/content/projects';
 import ProjectCard from '@/components/ProjectCard';
 import ThemeToggle from '@/components/ThemeToggle';
-import StackedWorks from '@/components/StackedWorks';
+import Reveal from '@/components/Reveal';
 import { BehanceIcon, CheckIcon, DownloadIcon, GlobeIcon, LinkedInIcon, WhatsAppIcon } from '@/components/Icons';
 
 export default async function Home({ params }: { params: Promise<{ locale: string }> }) {
@@ -48,7 +48,11 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
             ))}
           </nav>
 
-          <h1 className="headline">{t.headline}</h1>
+          <h1 className="headline">
+            {t.headline.map((line) => (
+              <span key={line}>{line}</span>
+            ))}
+          </h1>
           <p className="intro">{t.intro}</p>
 
           <div className="cta-row">
@@ -83,34 +87,34 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
         {/* ───────────── Content ───────────── */}
         <main id="main" className="content">
           <div className="content-inner">
-            <section id="works" className="section">
+            <section id="works" className="section" data-reveal>
               <header className="section-head">
                 <span className="eyebrow">{t.worksEyebrow}</span>
                 <h2 className="h2">{t.worksTitle}</h2>
                 <p className="sub">{t.worksSub}</p>
               </header>
-              <StackedWorks>
+              <div className="works">
                 {projects.map((p, i) => (
-                  <ProjectCard key={p.slug} project={p} locale={locale} eager={i < 2} index={i} />
+                  <ProjectCard key={p.slug} project={p} locale={locale} eager={i < 2} />
                 ))}
-              </StackedWorks>
+              </div>
             </section>
 
-            <section id="about" className="section" style={{ gap: 40 }}>
+            <section id="about" className="section" data-reveal style={{ gap: 40 }}>
               <header className="section-head">
                 <span className="eyebrow">{t.aboutEyebrow}</span>
                 <h2 className="h2">{t.aboutTitle}</h2>
               </header>
-              <div className="two-col reveal">
+              <div className="two-col">
                 <p>{t.about1}</p>
                 <p>{t.about2}</p>
               </div>
-              <blockquote className="quote reveal">{t.quote}</blockquote>
+              <blockquote className="quote">{t.quote}</blockquote>
               <div className="section-head" style={{ gap: 16 }}>
                 <h3 className="h3">{t.expertiseTitle}</h3>
                 <div className="tiles">
                   {t.expertise.map((e) => (
-                    <div key={e.title} className="tile reveal">
+                    <div key={e.title} className="tile">
                       <span className="tile-title">{e.title}</span>
                       <span className="tile-body">{e.body}</span>
                     </div>
@@ -119,14 +123,14 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
               </div>
             </section>
 
-            <section id="process" className="section">
+            <section id="process" className="section" data-reveal>
               <header className="section-head">
                 <span className="eyebrow">{t.processEyebrow}</span>
                 <h2 className="h2">{t.processTitle}</h2>
               </header>
               <ol className="steps">
                 {t.process.map((s) => (
-                  <li key={s.n} className="step reveal">
+                  <li key={s.n} className="step">
                     <span className="step-n">{s.n}</span>
                     <span className="step-title">{s.title}</span>
                     <span className="step-body">{s.body}</span>
@@ -135,14 +139,14 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
               </ol>
             </section>
 
-            <section id="experience" className="section">
+            <section id="experience" className="section" data-reveal>
               <header className="section-head">
                 <span className="eyebrow">{t.expEyebrow}</span>
                 <h2 className="h2">{t.expTitle}</h2>
               </header>
               <div>
                 {t.exp.map((x) => (
-                  <div key={x.org} className="exp-row reveal">
+                  <div key={x.org} className="exp-row">
                     <span className="exp-when">{x.when}</span>
                     <div className="exp-main">
                       <span className="exp-org">{x.org}</span>
@@ -154,7 +158,7 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
               </div>
             </section>
 
-            <section id="contact" className="contact reveal">
+            <section id="contact" className="contact" data-reveal>
               <h2>{t.contactTitle}</h2>
               <div className="cta-row">
                 <a className="btn btn-primary" href={links.whatsapp} target="_blank" rel="noopener noreferrer">
@@ -170,6 +174,7 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
               </div>
             </section>
 
+            <Reveal />
             <footer className="footer">
               <span>{t.footer}</span>
               <a href="#main">{t.backTop}</a>

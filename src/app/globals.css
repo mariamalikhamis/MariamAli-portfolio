@@ -31,7 +31,7 @@
   --track-head: -0.025em;
   --track-label: 0.08em;
 
-  --ease-out: cubic-bezier(0.2, 0.7, 0.2, 1);
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
   color-scheme: light;
 }
 
@@ -305,8 +305,12 @@ ol {
   color: var(--text);
 }
 
+.headline span {
+  display: block;
+  white-space: nowrap;
+}
 .headline {
-  font-size: clamp(32px, 4vw, 40px);
+  font-size: clamp(30px, 8vw, 34px);
   line-height: var(--lh-head);
   letter-spacing: var(--track-head);
   font-weight: 600;
@@ -320,6 +324,27 @@ ol {
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
+}
+.sidebar .cta-row {
+  flex-wrap: nowrap;
+}
+.sidebar .cta-row .btn {
+  flex: 1 1 auto;
+  justify-content: center;
+  padding: 0 16px;
+  white-space: nowrap;
+}
+@media (max-width: 480px) {
+  .sidebar .cta-row .btn {
+    padding: 0 12px;
+    gap: 6px;
+    font-size: 14px;
+  }
+}
+@media (max-width: 340px) {
+  .sidebar .cta-row {
+    flex-wrap: wrap;
+  }
 }
 .btn {
   display: inline-flex;
@@ -407,13 +432,11 @@ ol {
   color: var(--muted);
 }
 
-/* Works: sticky cards overlap effect */
-.stack {
-  container-type: inline-size;
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-6);
-  padding-bottom: var(--space-6);
+/* Works grid */
+.works {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 320px), 1fr));
+  gap: var(--space-5);
 }
 .card {
   display: flex;
@@ -422,39 +445,6 @@ ol {
   border: 1px solid var(--border);
   background: var(--surface);
   overflow: hidden;
-}
-.stack-card {
-  --stack-p: 0;
-  position: sticky;
-  top: calc(16px + var(--i) * 10px);
-  transform-origin: 50% 0%;
-  transform: scale(calc(1 - var(--stack-p) * 0.06));
-  filter: brightness(calc(1 - var(--stack-p) * 0.12));
-  box-shadow: 0 -1px 0 var(--border), 0 18px 40px -24px rgba(0, 0, 0, 0.25);
-  will-change: transform;
-}
-[data-theme='dark'] .stack-card {
-  box-shadow: 0 18px 40px -20px rgba(0, 0, 0, 0.7);
-}
-@media (min-width: 1024px) {
-  .stack-card {
-    top: calc(40px + var(--i) * 14px);
-  }
-}
-@container (min-width: 680px) {
-  .stack-card {
-    display: grid;
-    grid-template-columns: minmax(0, 1.45fr) minmax(0, 1fr);
-    min-height: 360px;
-  }
-  .stack-card .card-media {
-    aspect-ratio: auto;
-    height: 100%;
-    min-height: 360px;
-  }
-  .stack-card .card-body {
-    padding: var(--space-6) 28px;
-  }
 }
 .card-media {
   aspect-ratio: 16 / 10;
@@ -467,11 +457,18 @@ ol {
   height: 100%;
   object-fit: cover;
   object-position: 0% 0%;
+  transition: transform 0.6s var(--ease-out);
 }
 .card-media[data-fit='contain'] img,
 .card-media[data-fit='contain'] video {
   object-fit: contain;
   object-position: center;
+}
+@media (hover: hover) {
+  .card:hover .card-media img,
+  .card:hover .card-media video {
+    transform: scale(1.03);
+  }
 }
 .card-body {
   flex: 1;
@@ -668,22 +665,18 @@ ol {
   color: var(--text);
 }
 
-/* ───────────────────────── Motion: reveal on scroll ───────────────────────── */
-@supports (animation-timeline: view()) {
-  @media (prefers-reduced-motion: no-preference) {
-    .reveal {
-      animation: reveal linear both;
-      animation-timeline: view();
-      animation-range: entry 0% entry 35%;
-    }
-  }
+/* ───────────────────────── Motion: sections ease in on enter ───────────────────────── */
+html.js [data-reveal] {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.7s var(--ease-out), transform 0.7s var(--ease-out);
 }
-@keyframes reveal {
-  from {
-    opacity: 0;
-    transform: translateY(16px);
-  }
-  to {
+html.js [data-reveal].is-visible {
+  opacity: 1;
+  transform: none;
+}
+@media (prefers-reduced-motion: reduce) {
+  html.js [data-reveal] {
     opacity: 1;
     transform: none;
   }

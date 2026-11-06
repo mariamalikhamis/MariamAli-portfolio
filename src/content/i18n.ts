@@ -36,17 +36,16 @@ const en = {
     { label: 'Experience', href: '#experience' },
     { label: 'Contact', href: '#contact' },
   ],
-  headline: 'A curious mind, grounded in strategy.',
+  headline: ['A curious mind,', 'grounded in strategy.'],
   intro:
-    'I design SaaS, e-commerce and dashboard products for Saudi and global markets, with interfaces built for the people using them today and the AI agents working alongside them tomorrow.',
+    'I design SaaS, B2B, B2C products for Saudi and global markets, with interfaces built for the people using them today and the AI agents working alongside them tomorrow.',
   ctaWhatsapp: 'Chat on WhatsApp',
   ctaCv: 'Download CV',
   proof: [
-    'SaaS, e-commerce & dashboard design',
-    'Arabic-first, bilingual RTL interfaces',
+    'Certified by Uxcel',
     'Design systems & reusable components',
     'User research & usability testing',
-    'Certified by Uxcel',
+    'Arabic-first, bilingual RTL interfaces',
   ],
   worksEyebrow: 'Selected work',
   worksTitle: 'Products shaped around a real business question',
@@ -54,7 +53,7 @@ const en = {
   aboutEyebrow: 'About',
   aboutTitle: 'I start with the system, then the screen',
   about1:
-    'I studied Production Engineering at Alexandria University, and it still shapes how I design: I map the users, constraints and business goals before I open Figma. I then trained in the ITI UI/UX Design Track, an intensive program in user research, wireframing, prototyping, accessibility and responsive design.',
+    'I studied Production Engineering, and it still shapes how I design: I map the users, constraints and business goals before I open Figma. I then joined ITI’s intensive UI/UX Design Track.',
   about2:
     'For the past three years I have designed merchant platforms, dashboards and conference sites for Saudi companies, and products for clients in Egypt, Germany and the US. I work closely with developers, product managers and stakeholders, and I hand off designs that are ready to build.',
   quote:
@@ -110,17 +109,16 @@ const ar: Dict = {
     { label: 'الخبرات', href: '#experience' },
     { label: 'تواصل', href: '#contact' },
   ],
-  headline: 'عقلٌ فضولي، يرتكز على الاستراتيجية.',
+  headline: ['عقلٌ فضولي،', 'يرتكز على الاستراتيجية.'],
   intro:
-    'أصمم منتجات SaaS ومتاجر إلكترونية ولوحات تحكم للسوق السعودي والأسواق العالمية، بواجهات تخدم من يستخدمها اليوم، ووكلاء الذكاء الاصطناعي الذين سيعملون إلى جانبهم غداً.',
+    'أصمم منتجات SaaS وB2B وB2C للسوق السعودي والأسواق العالمية، بواجهات تخدم من يستخدمها اليوم، ووكلاء الذكاء الاصطناعي الذين سيعملون إلى جانبهم غداً.',
   ctaWhatsapp: 'تواصل عبر واتساب',
   ctaCv: 'تحميل السيرة الذاتية',
   proof: [
-    'تصميم منتجات SaaS والتجارة الإلكترونية ولوحات التحكم',
-    'واجهات عربية أولاً وثنائية اللغة (RTL)',
+    'معتمدة من Uxcel',
     'أنظمة تصميم ومكونات قابلة لإعادة الاستخدام',
     'أبحاث المستخدم واختبارات قابلية الاستخدام',
-    'معتمدة من Uxcel',
+    'واجهات عربية أولاً وثنائية اللغة (RTL)',
   ],
   worksEyebrow: 'أعمال مختارة',
   worksTitle: 'منتجات صُممت حول سؤال عمل حقيقي',
@@ -128,7 +126,7 @@ const ar: Dict = {
   aboutEyebrow: 'نبذة',
   aboutTitle: 'أبدأ بالنظام، ثم بالشاشة',
   about1:
-    'درستُ هندسة الإنتاج في جامعة الإسكندرية، وما زالت تؤثر في طريقة تصميمي: أرسم صورة كاملة للمستخدمين والقيود وأهداف العمل قبل أن أفتح Figma. ثم تدرّبت في مسار تصميم UI/UX بمعهد تكنولوجيا المعلومات (ITI)، وهو برنامج مكثف في أبحاث المستخدم والإطارات الأولية والنماذج التفاعلية وإتاحة الوصول والتصميم المتجاوب.',
+    'درستُ هندسة الإنتاج، وما زالت تؤثر في طريقة تصميمي: أرسم صورة كاملة للمستخدمين والقيود وأهداف العمل قبل أن أفتح Figma. ثم التحقتُ بمسار تصميم UI/UX المكثف في معهد تكنولوجيا المعلومات (ITI).',
   about2:
     'خلال السنوات الثلاث الماضية صممت منصات للتجار ولوحات تحكم ومواقع مؤتمرات لشركات سعودية، ومنتجات لعملاء في مصر وألمانيا والولايات المتحدة. أعمل عن قرب مع المطورين ومديري المنتجات وأصحاب المصلحة، وأسلّم تصاميم جاهزة للتنفيذ.',
   quote:
