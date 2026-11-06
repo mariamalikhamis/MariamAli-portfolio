@@ -7,7 +7,7 @@ import '@fontsource/ibm-plex-sans-arabic/arabic-600.css';
 import '../globals.css';
 import { dictionaries, isLocale, locales } from '@/content/i18n';
 
-const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://mariamali-portfolio.vercel.app';
+const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://mariam-ali-portfolio.vercel.app';
 
 export function generateStaticParams() {
   return locales.map((locale) => ({ locale }));
