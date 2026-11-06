@@ -54,7 +54,7 @@ const en = {
   aboutEyebrow: 'About',
   aboutTitle: 'I start with the system, then the screen',
   about1:
-    'I studied Production Engineering, and it still shapes how I design: I map the users, constraints and business goals before I open Figma.',
+    'I studied Production Engineering at Alexandria University, and it still shapes how I design: I map the users, constraints and business goals before I open Figma. I then trained in the ITI UI/UX Design Track, an intensive program in user research, wireframing, prototyping, accessibility and responsive design.',
   about2:
     'For the past three years I have designed merchant platforms, dashboards and conference sites for Saudi companies, and products for clients in Egypt, Germany and the US. I work closely with developers, product managers and stakeholders, and I hand off designs that are ready to build.',
   quote:
@@ -80,7 +80,7 @@ const en = {
   exp: [
     { when: '2026 — Now', org: 'Freelance', role: 'Product Designer', body: 'SaaS, real estate, travel and ERP products for clients in Egypt, Germany and the US.' },
     { when: '2025 — 2026', org: 'Al-Raedah | Ghadan', role: 'UI/UX Designer', body: 'An e-commerce platform and merchant dashboard, the IAVE conference website, and UX audits of existing products.' },
-    { when: '2024 — 2025', org: 'UpSellUp', role: 'UI/UX Designer', body: 'A Salla theme, merchant dashboards, and upsell and cross-sell widgets for Salla and Zid stores.' },
+    { when: '2024 — 2025', org: 'UpSellUp', role: 'UI/UX Designer', body: 'A Salla theme, merchant dashboards, and upsell and cross-sell widgets for Salla stores.' },
   ],
   contactTitle: 'Have a project in mind, or looking for a design collaborator? Let’s build something meaningful together.',
   footer: '© 2026 Mariam Ali',
@@ -128,7 +128,7 @@ const ar: Dict = {
   aboutEyebrow: 'نبذة',
   aboutTitle: 'أبدأ بالنظام، ثم بالشاشة',
   about1:
-    'درستُ هندسة الإنتاج، وما زالت تؤثر في طريقة تصميمي: أرسم صورة كاملة للمستخدمين والقيود وأهداف العمل قبل أن أفتح Figma.',
+    'درستُ هندسة الإنتاج في جامعة الإسكندرية، وما زالت تؤثر في طريقة تصميمي: أرسم صورة كاملة للمستخدمين والقيود وأهداف العمل قبل أن أفتح Figma. ثم تدرّبت في مسار تصميم UI/UX بمعهد تكنولوجيا المعلومات (ITI)، وهو برنامج مكثف في أبحاث المستخدم والإطارات الأولية والنماذج التفاعلية وإتاحة الوصول والتصميم المتجاوب.',
   about2:
     'خلال السنوات الثلاث الماضية صممت منصات للتجار ولوحات تحكم ومواقع مؤتمرات لشركات سعودية، ومنتجات لعملاء في مصر وألمانيا والولايات المتحدة. أعمل عن قرب مع المطورين ومديري المنتجات وأصحاب المصلحة، وأسلّم تصاميم جاهزة للتنفيذ.',
   quote:
@@ -154,7 +154,7 @@ const ar: Dict = {
   exp: [
     { when: '2026 — الآن', org: 'عمل حر', role: 'مصممة منتجات', body: 'منتجات SaaS وعقارات وسفر وأنظمة ERP لعملاء في مصر وألمانيا والولايات المتحدة.' },
     { when: '2025 — 2026', org: 'Al-Raedah | Ghadan', role: 'مصممة UI/UX', body: 'منصة تجارة إلكترونية ولوحة تحكم للتجار، وموقع مؤتمر IAVE، وتدقيق تجربة المستخدم لمنتجات قائمة.' },
-    { when: '2024 — 2025', org: 'UpSellUp', role: 'مصممة UI/UX', body: 'ثيم لمنصة سلة، ولوحات تحكم للتجار، وأدوات بيع إضافي وتقاطعي لمتاجر سلة وزد.' },
+    { when: '2024 — 2025', org: 'UpSellUp', role: 'مصممة UI/UX', body: 'ثيم لمنصة سلة، ولوحات تحكم للتجار، وأدوات بيع إضافي وتقاطعي لمتاجر سلة.' },
   ],
   contactTitle: 'لديك مشروع، أو تبحث عن مصمم يشاركك العمل؟ لنصنع معاً شيئاً ذا قيمة.',
   footer: '© 2026 مريم علي',

@@ -2,7 +2,7 @@ import type { Locale } from '@/content/i18n';
 import { industries, markets, platforms, type Project } from '@/content/projects';
 import { PinIcon } from './Icons';
 
-export default function ProjectCard({ project, locale, eager }: { project: Project; locale: Locale; eager?: boolean }) {
+export default function ProjectCard({ project, locale, eager, index = 0 }: { project: Project; locale: Locale; eager?: boolean; index?: number }) {
   const copy = project.copy[locale];
   const meta = [copy.org, ...project.platforms.map((p) => platforms[p][locale])].join(' · ');
 
@@ -38,7 +38,7 @@ export default function ProjectCard({ project, locale, eager }: { project: Proje
   );
 
   return (
-    <article className="card reveal">
+    <article className="card stack-card" style={{ '--i': index } as React.CSSProperties}>
       {project.href ? (
         <a href={project.href} target="_blank" rel="noopener noreferrer" style={{ display: 'contents' }}>
           {media}

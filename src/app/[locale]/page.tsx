@@ -3,6 +3,7 @@ import { dictionaries, isLocale, links } from '@/content/i18n';
 import { projects } from '@/content/projects';
 import ProjectCard from '@/components/ProjectCard';
 import ThemeToggle from '@/components/ThemeToggle';
+import StackedWorks from '@/components/StackedWorks';
 import { BehanceIcon, CheckIcon, DownloadIcon, GlobeIcon, LinkedInIcon, WhatsAppIcon } from '@/components/Icons';
 
 export default async function Home({ params }: { params: Promise<{ locale: string }> }) {
@@ -88,11 +89,11 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
                 <h2 className="h2">{t.worksTitle}</h2>
                 <p className="sub">{t.worksSub}</p>
               </header>
-              <div className="works">
+              <StackedWorks>
                 {projects.map((p, i) => (
-                  <ProjectCard key={p.slug} project={p} locale={locale} eager={i < 2} />
+                  <ProjectCard key={p.slug} project={p} locale={locale} eager={i < 2} index={i} />
                 ))}
-              </div>
+              </StackedWorks>
             </section>
 
             <section id="about" className="section" style={{ gap: 40 }}>
