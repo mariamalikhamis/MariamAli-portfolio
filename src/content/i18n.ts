@@ -80,7 +80,7 @@ const en = {
   expTitle: 'Where I’ve worked',
   exp: [
     { when: '2026 — Now', org: 'Freelance', role: 'Product Designer', body: 'SaaS, real estate, travel and ERP products for clients in Egypt, Germany and the US.' },
-    { when: '2025 — 2026', org: 'Al-Raedah for Digital Transformation', role: 'UI/UX Designer', body: 'An e-commerce platform and merchant dashboard, the IAVE conference website, and UX audits of existing products.' },
+    { when: '2025 — 2026', org: 'Al-Raedah for Digital Transformation | Ghadan', href: 'https://www.linkedin.com/company/professionalp/', role: 'UI/UX Designer', body: 'An e-commerce platform and merchant dashboard, the IAVE conference website, and UX audits of existing products.' },
     { when: '2024 — 2025', org: 'Suoodq | صعودك', href: 'https://www.linkedin.com/company/107052220/', role: 'UI/UX Designer', body: 'A Salla theme, merchant dashboards, and upsell and cross-sell widgets for Salla stores.' },
   ],
   contactTitle: 'Have a project in mind, or looking for a design collaborator? Let’s build something meaningful together.',
@@ -155,7 +155,7 @@ const ar: Dict = {
   expTitle: 'أين عملت',
   exp: [
     { when: '2026 — الآن', org: 'عمل حر', role: 'مصممة منتجات', body: 'منتجات SaaS وعقارات وسفر وأنظمة ERP لعملاء في مصر وألمانيا والولايات المتحدة.' },
-    { when: '2025 — 2026', org: 'Al-Raedah for Digital Transformation', role: 'مصممة UI/UX', body: 'منصة تجارة إلكترونية ولوحة تحكم للتجار، وموقع مؤتمر IAVE، وتدقيق تجربة المستخدم لمنتجات قائمة.' },
+    { when: '2025 — 2026', org: 'Al-Raedah for Digital Transformation | Ghadan', href: 'https://www.linkedin.com/company/professionalp/', role: 'مصممة UI/UX', body: 'منصة تجارة إلكترونية ولوحة تحكم للتجار، وموقع مؤتمر IAVE، وتدقيق تجربة المستخدم لمنتجات قائمة.' },
     { when: '2024 — 2025', org: 'Suoodq | صعودك', href: 'https://www.linkedin.com/company/107052220/', role: 'مصممة UI/UX', body: 'ثيم لمنصة سلة، ولوحات تحكم للتجار، وأدوات بيع إضافي وتقاطعي لمتاجر سلة.' },
   ],
   contactTitle: 'لديك مشروع، أو تبحث عن مصمم يشاركك العمل؟ لنصنع معاً شيئاً ذا قيمة.',
