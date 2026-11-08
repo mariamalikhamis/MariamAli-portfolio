@@ -42,6 +42,7 @@ const en = {
   ctaWhatsapp: 'Chat on WhatsApp',
   ctaCv: 'Download CV',
   viewCase: 'View case study',
+  linkLabels: { behance: 'View on Behance', salla: 'View on Salla', live: 'Visit website' },
   proof: [
     'Certified by Uxcel',
     'Design systems & reusable components',
@@ -116,6 +117,7 @@ const ar: Dict = {
   ctaWhatsapp: 'تواصل عبر واتساب',
   ctaCv: 'تحميل السيرة الذاتية',
   viewCase: 'عرض دراسة الحالة',
+  linkLabels: { behance: 'عرض على Behance', salla: 'عرض على سلة', live: 'زيارة الموقع' },
   proof: [
     'معتمدة من Uxcel',
     'أنظمة تصميم ومكونات قابلة لإعادة الاستخدام',

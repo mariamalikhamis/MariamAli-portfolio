@@ -7,16 +7,19 @@ export default function ProjectCard({
   locale,
   eager,
   ctaLabel,
+  linkLabels,
 }: {
   project: Project;
   locale: Locale;
   eager?: boolean;
   ctaLabel?: string;
+  linkLabels?: Record<'behance' | 'salla' | 'live', string>;
 }) {
   const copy = project.copy[locale];
   const meta = [copy.org, ...project.platforms.map((p) => platforms[p][locale])].join(' · ');
   const internal = project.caseStudy ? `/${locale}/work/${project.slug}` : undefined;
   const link = internal ?? project.href;
+  const label = internal ? ctaLabel : project.href ? linkLabels?.[project.linkLabel ?? 'live'] : undefined;
 
   const inner = (
     <>
@@ -45,12 +48,18 @@ export default function ProjectCard({
         <p className="card-q">{copy.question}</p>
         <div className="card-meta-row">
           <span>{meta}</span>
-          {internal && ctaLabel ? (
+          {label ? (
             <span className="card-cta">
-              {ctaLabel}
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true" className="flip-rtl">
-                <path d="M5 12h14M13 6l6 6-6 6" />
-              </svg>
+              {label}
+              {internal ? (
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true" className="flip-rtl">
+                  <path d="M5 12h14M13 6l6 6-6 6" />
+                </svg>
+              ) : (
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true" className="flip-rtl">
+                  <path d="M7 17L17 7M8 7h9v9" />
+                </svg>
+              )}
             </span>
           ) : null}
         </div>

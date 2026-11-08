@@ -45,8 +45,9 @@ export type Project = {
   /** 'cover' fills the frame from the top-left; 'contain' shows the whole image on `bg` */
   fit?: 'cover' | 'contain';
   bg?: string;
-  /** Optional link to a live site (opens in a new tab) */
+  /** Optional external link (opens in a new tab) and the label shown on the card */
   href?: string;
+  linkLabel?: 'behance' | 'salla' | 'live';
   /** true when the project has its own page at /[locale]/work/[slug] */
   caseStudy?: boolean;
   copy: Record<Locale, Copy>;
@@ -101,6 +102,8 @@ export const projects: Project[] = [
     industries: ['ecom', 'saas'],
     platforms: ['web', 'dash'],
     cover: '/covers/rawaj.webp',
+    href: 'https://apps.salla.sa/en/app/542868434',
+    linkLabel: 'salla',
     copy: {
       en: { title: 'Rawaj', question: 'How can Salla stores increase revenue and engagement with ready-made SaaS tools and themes?', org: 'UpSellUp' },
       ar: { title: 'رواج', question: 'كيف تزيد متاجر سلة مبيعاتها وتفاعل عملائها بأدوات SaaS وثيمات جاهزة؟', org: 'UpSellUp' },
@@ -145,6 +148,8 @@ export const projects: Project[] = [
     industries: ['mobility'],
     platforms: ['mobile'],
     cover: '/covers/amenah.webp',
+    href: 'https://www.behance.net/gallery/218857269/Amenah-Only-Ride-Hailing-App-UIUX-Case-Study',
+    linkLabel: 'behance',
     copy: {
       en: { title: 'Amenah — ride hailing', question: 'How can a ride-hailing app make everyday transport feel safer and more reliable for women?', org: 'UX case study' },
       ar: { title: 'آمنة — تطبيق توصيل', question: 'كيف يجعل تطبيق توصيل التنقل اليومي أكثر أماناً وموثوقية للنساء؟', org: 'دراسة حالة UX' },
@@ -156,6 +161,8 @@ export const projects: Project[] = [
     industries: ['ecom'],
     platforms: ['mobile'],
     cover: '/covers/bookempire.webp',
+    href: 'https://www.behance.net/gallery/218540021/BookEmpire-Books-Mobile-App-Experience',
+    linkLabel: 'behance',
     copy: {
       en: { title: 'BookEmpire — books mobile app', question: 'How can readers discover, buy and read Arabic and English books in one app?', org: 'ITI · 2025' },
       ar: { title: 'BookEmpire — تطبيق الكتب', question: 'كيف يكتشف القراء الكتب العربية والإنجليزية ويشترونها ويقرؤونها في تطبيق واحد؟', org: 'ITI · 2025' },
