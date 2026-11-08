@@ -81,7 +81,7 @@ const en = {
   exp: [
     { when: '2026 — Now', org: 'Freelance', role: 'Product Designer', body: 'SaaS, real estate, travel and ERP products for clients in Egypt, Germany and the US.' },
     { when: '2025 — 2026', org: 'Al-Raedah | Ghadan', role: 'UI/UX Designer', body: 'An e-commerce platform and merchant dashboard, the IAVE conference website, and UX audits of existing products.' },
-    { when: '2024 — 2025', org: 'UpSellUp', role: 'UI/UX Designer', body: 'A Salla theme, merchant dashboards, and upsell and cross-sell widgets for Salla stores.' },
+    { when: '2024 — 2025', org: 'Suoodq | صعودك', href: 'https://www.linkedin.com/company/107052220/', role: 'UI/UX Designer', body: 'A Salla theme, merchant dashboards, and upsell and cross-sell widgets for Salla stores.' },
   ],
   contactTitle: 'Have a project in mind, or looking for a design collaborator? Let’s build something meaningful together.',
   footer: '© 2026 Mariam Ali',
@@ -156,7 +156,7 @@ const ar: Dict = {
   exp: [
     { when: '2026 — الآن', org: 'عمل حر', role: 'مصممة منتجات', body: 'منتجات SaaS وعقارات وسفر وأنظمة ERP لعملاء في مصر وألمانيا والولايات المتحدة.' },
     { when: '2025 — 2026', org: 'Al-Raedah | Ghadan', role: 'مصممة UI/UX', body: 'منصة تجارة إلكترونية ولوحة تحكم للتجار، وموقع مؤتمر IAVE، وتدقيق تجربة المستخدم لمنتجات قائمة.' },
-    { when: '2024 — 2025', org: 'UpSellUp', role: 'مصممة UI/UX', body: 'ثيم لمنصة سلة، ولوحات تحكم للتجار، وأدوات بيع إضافي وتقاطعي لمتاجر سلة.' },
+    { when: '2024 — 2025', org: 'Suoodq | صعودك', href: 'https://www.linkedin.com/company/107052220/', role: 'مصممة UI/UX', body: 'ثيم لمنصة سلة، ولوحات تحكم للتجار، وأدوات بيع إضافي وتقاطعي لمتاجر سلة.' },
   ],
   contactTitle: 'لديك مشروع، أو تبحث عن مصمم يشاركك العمل؟ لنصنع معاً شيئاً ذا قيمة.',
   footer: '© 2026 مريم علي',

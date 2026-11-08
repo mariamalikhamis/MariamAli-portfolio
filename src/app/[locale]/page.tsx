@@ -149,7 +149,14 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
                   <div key={x.org} className="exp-row">
                     <span className="exp-when">{x.when}</span>
                     <div className="exp-main">
-                      <span className="exp-org">{x.org}</span>
+                      {'href' in x && x.href ? (
+                        <a className="exp-org exp-org-link" href={x.href} target="_blank" rel="noopener noreferrer">
+                          {x.org}
+                          <span aria-hidden="true"> ↗</span>
+                        </a>
+                      ) : (
+                        <span className="exp-org">{x.org}</span>
+                      )}
                       <span className="exp-role">{x.role}</span>
                       <span className="exp-body">{x.body}</span>
                     </div>

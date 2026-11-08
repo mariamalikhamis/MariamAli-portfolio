@@ -105,8 +105,8 @@ export const projects: Project[] = [
     href: 'https://apps.salla.sa/en/app/542868434',
     linkLabel: 'salla',
     copy: {
-      en: { title: 'Rawaj', question: 'How can Salla stores increase revenue and engagement with ready-made SaaS tools and themes?', org: 'UpSellUp' },
-      ar: { title: 'رواج', question: 'كيف تزيد متاجر سلة مبيعاتها وتفاعل عملائها بأدوات SaaS وثيمات جاهزة؟', org: 'UpSellUp' },
+      en: { title: 'Rawaj', question: 'How can Salla stores increase revenue and engagement with ready-made SaaS tools and themes?', org: 'Suoodq | صعودك' },
+      ar: { title: 'رواج', question: 'كيف تزيد متاجر سلة مبيعاتها وتفاعل عملائها بأدوات SaaS وثيمات جاهزة؟', org: 'Suoodq | صعودك' },
     },
   },
   {

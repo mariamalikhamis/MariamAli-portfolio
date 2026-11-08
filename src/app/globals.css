@@ -818,3 +818,7 @@ html.js [data-reveal].is-visible {
 .mc-impact { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; }
 @media (min-width: 1024px) { .mc-impact { grid-template-columns: repeat(4, minmax(0, 1fr)); } }
 @media (max-width: 420px) { .mc-impact { grid-template-columns: 1fr; } }
+
+.exp-org-link { text-decoration: underline; text-decoration-color: var(--border); text-underline-offset: 4px; }
+.exp-org-link:hover { text-decoration-color: currentColor; }
+.exp-org-link span { color: var(--muted); font-size: .85em; }
