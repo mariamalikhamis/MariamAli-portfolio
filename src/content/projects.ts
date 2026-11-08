@@ -85,12 +85,12 @@ export const projects: Project[] = [
     bg: '#2F3550',
     copy: {
       en: {
-        title: 'Refad — consulting website',
+        title: 'Refad - consulting website',
         question: 'How can a Saudi consulting firm present its services clearly and turn visitors into booked consultations?',
         org: 'Arabic-first website',
       },
       ar: {
-        title: 'Refad — موقع استشارات',
+        title: 'Refad - موقع استشارات',
         question: 'كيف تعرض شركة استشارات سعودية خدماتها بوضوح وتحوّل الزوار إلى حجوزات استشارات؟',
         org: 'موقع عربي أولاً',
       },
@@ -163,8 +163,8 @@ export const projects: Project[] = [
     href: 'https://www.behance.net/gallery/218857269/Amenah-Only-Ride-Hailing-App-UIUX-Case-Study',
     linkLabel: 'behance',
     copy: {
-      en: { title: 'Amenah — ride hailing', question: 'How can a ride-hailing app make everyday transport feel safer and more reliable for women?', org: 'UX case study' },
-      ar: { title: 'آمنة — تطبيق توصيل', question: 'كيف يجعل تطبيق توصيل التنقل اليومي أكثر أماناً وموثوقية للنساء؟', org: 'دراسة حالة UX' },
+      en: { title: 'Amenah - ride hailing', question: 'How can a ride-hailing app make everyday transport feel safer and more reliable for women?', org: 'UX case study' },
+      ar: { title: 'آمنة - تطبيق توصيل', question: 'كيف يجعل تطبيق توصيل التنقل اليومي أكثر أماناً وموثوقية للنساء؟', org: 'دراسة حالة UX' },
     },
   },
   {
@@ -176,8 +176,8 @@ export const projects: Project[] = [
     href: 'https://www.behance.net/gallery/218540021/BookEmpire-Books-Mobile-App-Experience',
     linkLabel: 'behance',
     copy: {
-      en: { title: 'BookEmpire — books mobile app', question: 'How can readers discover, buy and read Arabic and English books in one app?', org: 'ITI · 2025' },
-      ar: { title: 'BookEmpire — تطبيق الكتب', question: 'كيف يكتشف القراء الكتب العربية والإنجليزية ويشترونها ويقرؤونها في تطبيق واحد؟', org: 'ITI · 2025' },
+      en: { title: 'BookEmpire - books mobile app', question: 'How can readers discover, buy and read Arabic and English books in one app?', org: 'ITI · 2025' },
+      ar: { title: 'BookEmpire - تطبيق الكتب', question: 'كيف يكتشف القراء الكتب العربية والإنجليزية ويشترونها ويقرؤونها في تطبيق واحد؟', org: 'ITI · 2025' },
     },
   },
   {
