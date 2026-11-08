@@ -41,6 +41,7 @@ const en = {
     'I design SaaS, B2B, B2C products for Saudi and global markets, with interfaces built for the people using them today and the AI agents working alongside them tomorrow.',
   ctaWhatsapp: 'Chat on WhatsApp',
   ctaCv: 'Download CV',
+  viewCase: 'View case study',
   proof: [
     'Certified by Uxcel',
     'Design systems & reusable components',
@@ -114,6 +115,7 @@ const ar: Dict = {
     'أصمم منتجات SaaS وB2B وB2C للسوق السعودي والأسواق العالمية، بواجهات تخدم من يستخدمها اليوم، ووكلاء الذكاء الاصطناعي الذين سيعملون إلى جانبهم غداً.',
   ctaWhatsapp: 'تواصل عبر واتساب',
   ctaCv: 'تحميل السيرة الذاتية',
+  viewCase: 'عرض دراسة الحالة',
   proof: [
     'معتمدة من Uxcel',
     'أنظمة تصميم ومكونات قابلة لإعادة الاستخدام',

@@ -45,8 +45,10 @@ export type Project = {
   /** 'cover' fills the frame from the top-left; 'contain' shows the whole image on `bg` */
   fit?: 'cover' | 'contain';
   bg?: string;
-  /** Optional link to a live site or case study */
+  /** Optional link to a live site (opens in a new tab) */
   href?: string;
+  /** true when the project has its own page at /[locale]/work/[slug] */
+  caseStudy?: boolean;
   copy: Record<Locale, Copy>;
 };
 
@@ -110,6 +112,7 @@ export const projects: Project[] = [
     industries: ['logistics', 'saas'],
     platforms: ['mobile', 'dash'],
     cover: '/covers/shipment.webp',
+    caseStudy: true,
     copy: {
       en: { title: 'Shipment Management System', question: 'How can one SaaS system serve B2B and B2C shipments clearly for every user type involved?', org: 'B2B & B2C' },
       ar: { title: 'نظام إدارة الشحنات', question: 'كيف يخدم نظام SaaS واحد شحنات الشركات والأفراد بوضوح لكل نوع من المستخدمين؟', org: 'B2B & B2C' },

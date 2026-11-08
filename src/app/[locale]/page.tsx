@@ -95,7 +95,7 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
               </header>
               <div className="works">
                 {projects.map((p, i) => (
-                  <ProjectCard key={p.slug} project={p} locale={locale} eager={i < 2} />
+                  <ProjectCard key={p.slug} project={p} locale={locale} eager={i < 2} ctaLabel={t.viewCase} />
                 ))}
               </div>
             </section>
