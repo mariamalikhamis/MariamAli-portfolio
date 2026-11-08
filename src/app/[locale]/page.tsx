@@ -4,7 +4,7 @@ import { projects } from '@/content/projects';
 import ProjectCard from '@/components/ProjectCard';
 import ThemeToggle from '@/components/ThemeToggle';
 import Reveal from '@/components/Reveal';
-import { BehanceIcon, CheckIcon, DownloadIcon, GlobeIcon, LinkedInIcon, WhatsAppIcon } from '@/components/Icons';
+import { BehanceIcon, CheckIcon, DownloadIcon, GlobeIcon, LinkedInIcon, MailIcon, WhatsAppIcon } from '@/components/Icons';
 
 export default async function Home({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
@@ -173,9 +173,11 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
                   {t.ctaWhatsapp}
                 </a>
                 <a className="btn btn-ghost-inverse" href={`mailto:${links.email}`}>
+                  <MailIcon />
                   {links.email}
                 </a>
                 <a className="btn btn-ghost-inverse" href={links.cv} download="Mariam_Ali_Product_Designer_CV.pdf">
+                  <DownloadIcon />
                   {t.ctaCv}
                 </a>
               </div>

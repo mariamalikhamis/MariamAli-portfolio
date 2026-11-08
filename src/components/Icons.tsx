@@ -47,6 +47,13 @@ export const DownloadIcon = ({ size = 18 }: P) => (
   </svg>
 );
 
+export const MailIcon = ({ size = 18 }: P) => (
+  <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+    <rect x="3" y="5" width="18" height="14" rx="2.5" />
+    <path d="m4 7 8 6 8-6" />
+  </svg>
+);
+
 export const CheckIcon = ({ size = 18 }: P) => (
   <svg width={size} height={size} viewBox="0 0 24 24" {...base}>
     <circle cx="12" cy="12" r="9" />
