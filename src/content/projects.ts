@@ -66,12 +66,12 @@ export const projects: Project[] = [
       en: {
         title: 'IAVE World Volunteer Conference Platform',
         question: 'How can volunteers, organizers and partners register, coordinate and manage a global conference in Riyadh from one platform?',
-        org: 'Al-Raedah | Ghadan',
+        org: 'Al-Raedah for Digital Transformation',
       },
       ar: {
         title: 'منصة المؤتمر العالمي للتطوع IAVE',
         question: 'كيف يسجّل المتطوعون والمنظمون والشركاء وينسّقون ويديرون مؤتمراً عالمياً في الرياض من منصة واحدة؟',
-        org: 'Al-Raedah | Ghadan',
+        org: 'Al-Raedah for Digital Transformation',
       },
     },
   },
