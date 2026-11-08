@@ -121,7 +121,7 @@ export const caseStudies: CaseStudy[] = [
             { value: 'Design for the moment', body: 'I learned to design around the user’s real circumstances: a driver on the road needs big targets, one-hand use, and screens that still work on a weak signal.' },
           ],
         },
-        next: { label: 'Back to', title: 'All projects', href: '#works' },
+        next: { label: 'Next case study', title: 'Mercato — Growth tools merchants actually use', href: '/work/mercato' },
         back: 'All work',
       },
       ar: {
@@ -209,7 +209,7 @@ export const caseStudies: CaseStudy[] = [
             { value: 'صمّم للّحظة', body: 'تعلّمت أن أصمم وفق ظروف المستخدم الحقيقية: السائق على الطريق يحتاج أزراراً كبيرة، واستخداماً بيد واحدة، وشاشات تعمل مع ضعف الإشارة.' },
           ],
         },
-        next: { label: 'العودة إلى', title: 'كل المشاريع', href: '#works' },
+        next: { label: 'دراسة الحالة التالية', title: 'ميركاتو — أدوات نمو يستخدمها التجّار فعلاً', href: '/work/mercato' },
         back: 'كل الأعمال',
       },
     },

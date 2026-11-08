@@ -775,3 +775,46 @@ html.js [data-reveal].is-visible {
 @media (hover: hover) { .card.is-link:hover { transform: translateY(-3px); border-color: var(--border-strong); } }
 .card-cta { display: inline-flex; align-items: center; gap: 6px; color: var(--text); font-weight: 600; }
 .card-meta-row { margin-top: auto; padding-top: var(--space-3); border-top: 1px solid var(--border); font-size: 13px; color: var(--muted); display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px; }
+
+/* ── Mercato case study: before/after + KPI pattern ───────── */
+.mc { --mc: #0f766e; --mc-bg: color-mix(in srgb, #0f766e 12%, var(--bg)); }
+[data-theme='dark'] .mc { --mc: #5eead4; }
+.mc-hero-shot { background: var(--mc-bg); }
+.mc-stat { gap: 6px; }
+.mc-stat-value { font-size: clamp(32px, 4vw, 44px); font-weight: 600; letter-spacing: var(--track-head); color: var(--mc); line-height: 1.1; }
+[dir='rtl'] .mc-stat-value { text-align: right; }
+.mc-hmw { margin: 0; padding: 28px 32px; border-radius: var(--radius-card); background: var(--mc-bg); border-inline-start: 4px solid var(--mc); display: flex; flex-direction: column; gap: 8px; }
+.mc-hmw p { font-size: clamp(19px, 2.2vw, 24px); line-height: 1.4; font-weight: 500; letter-spacing: var(--track-head); max-width: 820px; }
+.mc-chapter { gap: 40px; }
+.mc-compare, .mc-more { display: grid; grid-template-columns: 1fr; gap: 20px; }
+@media (min-width: 900px) { .mc-compare, .mc-more { grid-template-columns: 1fr 1fr; } }
+.mc-compare figure, .mc-more figure { margin: 0; display: flex; flex-direction: column; gap: 10px; }
+.mc-label { align-self: flex-start; font-size: 12px; font-weight: 600; letter-spacing: .04em; text-transform: uppercase; padding: 4px 10px; border-radius: 999px; }
+.mc-label.is-before { background: color-mix(in srgb, #dc2626 12%, var(--bg)); color: #b91c1c; }
+.mc-label.is-after { background: var(--mc-bg); color: var(--mc); }
+[data-theme='dark'] .mc-label.is-before { color: #fca5a5; }
+.mc-fixes { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr)); gap: 16px; }
+.mc-fix { display: flex; flex-direction: column; gap: 14px; padding: 24px; border-radius: var(--radius-card); background: var(--surface); border: 1px solid var(--border); }
+.mc-fix-pair { display: flex; flex-direction: column; gap: 8px; }
+.mc-mini { display: block; font-size: 11px; font-weight: 600; letter-spacing: .05em; text-transform: uppercase; color: var(--muted); margin-bottom: 2px; }
+[dir='rtl'] .mc-mini { letter-spacing: 0; }
+.mc-problem { font-size: 15px; color: var(--muted); }
+.mc-problem .mc-mini { color: #b91c1c; }
+[data-theme='dark'] .mc-problem .mc-mini { color: #fca5a5; }
+.mc-solution .mc-mini { color: var(--mc); }
+.mc-to { color: var(--mc); display: inline-flex; width: 16px; }
+.mc-solution { font-size: 18px; font-weight: 600; line-height: 1.3; }
+.mc-fix-body { font-size: 14px; flex: 1; }
+.mc-kpi { display: grid; grid-template-columns: auto 1fr; grid-template-areas: 'v k' 'l l'; gap: 2px 10px; align-items: center; padding: 12px 14px; border-radius: 12px; background: var(--mc-bg); }
+.mc-kpi-value { grid-area: v; font-size: 18px; font-weight: 600; color: var(--mc); white-space: nowrap; }
+.mc-kpi-kind { grid-area: k; justify-self: end; font-size: 11px; font-weight: 600; padding: 3px 8px; border-radius: 999px; background: var(--surface); color: var(--muted); border: 1px solid var(--border); }
+.mc-kpi.kind-test .mc-kpi-kind { color: var(--mc); }
+.mc-kpi-label { grid-area: l; font-size: 13px; color: var(--muted); }
+.mc-revenue { display: flex; flex-wrap: wrap; gap: 24px 64px; padding-top: 24px; border-top: 1px solid color-mix(in srgb, var(--bg) 20%, transparent); }
+.mc-revenue-value { font-size: clamp(36px, 5vw, 52px); font-weight: 600; letter-spacing: var(--track-head); line-height: 1.05; }
+.mc-note { font-size: 13px; color: color-mix(in srgb, var(--bg) 65%, transparent); max-width: 760px; }
+.mc-learned { margin-top: 8px; padding: 20px 24px; border-radius: var(--radius-tile); background: var(--mc-bg); font-size: 17px; font-weight: 500; }
+@media (min-width: 768px) { .mc-fixes.count-4 { grid-template-columns: repeat(2, minmax(0, 1fr)); } .mc-fixes.count-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+.mc-impact { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; }
+@media (min-width: 1024px) { .mc-impact { grid-template-columns: repeat(4, minmax(0, 1fr)); } }
+@media (max-width: 420px) { .mc-impact { grid-template-columns: 1fr; } }

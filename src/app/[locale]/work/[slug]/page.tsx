@@ -6,15 +6,26 @@ import { caseStudies, getCaseStudy } from '@/content/caseStudies';
 import ThemeToggle from '@/components/ThemeToggle';
 import Reveal from '@/components/Reveal';
 import { GlobeIcon } from '@/components/Icons';
+import MercatoStudy from '@/components/MercatoStudy';
+import { mercato, mercatoCover } from '@/content/mercato';
 
 type Params = Promise<{ locale: string; slug: string }>;
 
 export function generateStaticParams() {
-  return locales.flatMap((locale) => caseStudies.map((c) => ({ locale, slug: c.slug })));
+  return locales.flatMap((locale) => [...caseStudies.map((c) => c.slug), 'mercato'].map((slug) => ({ locale, slug })));
 }
 
 export async function generateMetadata({ params }: { params: Params }): Promise<Metadata> {
   const { locale, slug } = await params;
+  if (isLocale(locale) && slug === 'mercato') {
+    const m = mercato[locale];
+    return {
+      title: m.metaTitle,
+      description: `${m.brand} ${m.summary}`,
+      alternates: { canonical: `/${locale}/work/${slug}`, languages: { en: `/en/work/${slug}`, ar: `/ar/work/${slug}` } },
+      openGraph: { title: m.metaTitle, description: m.summary, images: [mercatoCover] },
+    };
+  }
   const cs = getCaseStudy(slug);
   if (!isLocale(locale) || !cs) return {};
   const c = cs.copy[locale];
@@ -60,13 +71,15 @@ const stateTones = ['purple', 'cyan', 'amber', 'green', 'red'];
 
 export default async function CaseStudyPage({ params }: { params: Params }) {
   const { locale, slug } = await params;
+  if (!isLocale(locale)) notFound();
+  const isMercato = slug === 'mercato';
   const cs = getCaseStudy(slug);
-  if (!isLocale(locale) || !cs) notFound();
-  const c = cs.copy[locale];
+  if (!isMercato && !cs) notFound();
   const t = dictionaries[locale];
   const other = locale === 'ar' ? 'en' : 'ar';
+  const back = isMercato ? mercato[locale].back : cs!.copy[locale].back;
 
-  return (
+  const topbar = (
     <>
       <a className="skip-link" href="#main">
         {t.skipLink}
@@ -75,7 +88,7 @@ export default async function CaseStudyPage({ params }: { params: Params }) {
         <div className="cs-wrap cs-topbar-inner">
           <a className="cs-back" href={`/${locale}#works`}>
             <ArrowBack />
-            {c.back}
+            {back}
           </a>
           <div className="cs-topbar-actions">
             <a className="pill-btn" href={`/${other}/work/${slug}`} hrefLang={other} lang={other} aria-label={t.langAria}>
@@ -86,6 +99,22 @@ export default async function CaseStudyPage({ params }: { params: Params }) {
           </div>
         </div>
       </header>
+    </>
+  );
+
+  if (isMercato)
+    return (
+      <>
+        {topbar}
+        <MercatoStudy locale={locale} />
+      </>
+    );
+
+  const c = cs!.copy[locale];
+
+  return (
+    <>
+      {topbar}
 
       <main id="main" className="cs-wrap cs-main">
         {/* Hero */}
@@ -110,7 +139,7 @@ export default async function CaseStudyPage({ params }: { params: Params }) {
             ))}
           </dl>
           <div className="cs-hero-shot">
-            <img className="cs-shot" src={cs.cover} alt={c.heroAlt} width={1440} height={1024} />
+            <img className="cs-shot" src={cs!.cover} alt={c.heroAlt} width={1440} height={1024} />
           </div>
         </section>
 

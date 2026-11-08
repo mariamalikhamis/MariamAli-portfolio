@@ -122,6 +122,18 @@ export const projects: Project[] = [
     },
   },
   {
+    slug: 'mercato',
+    markets: ['global'],
+    industries: ['ecom', 'saas'],
+    platforms: ['dash'],
+    cover: '/covers/mercato.webp',
+    caseStudy: true,
+    copy: {
+      en: { title: 'Mercato', question: 'How might merchants discover and set up the growth tools they already pay for, at the moment they need them?', org: 'UX case study · AI-assisted workflow' },
+      ar: { title: 'ميركاتو', question: 'كيف يكتشف التجّار أدوات النمو التي يدفعون ثمنها بالفعل، ويفعّلونها في اللحظة التي يحتاجونها فيها؟', org: 'دراسة حالة UX · سير عمل بمساعدة الذكاء الاصطناعي' },
+    },
+  },
+  {
     slug: 'travelsin',
     markets: ['us'],
     industries: ['travel'],
