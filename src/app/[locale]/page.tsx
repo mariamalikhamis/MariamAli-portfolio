@@ -5,8 +5,7 @@ import { projects } from '@/content/projects';
 import ProjectCard from '@/components/ProjectCard';
 import ThemeToggle from '@/components/ThemeToggle';
 import Reveal from '@/components/Reveal';
-import SideNav from '@/components/SideNav';
-import { BehanceIcon, DownloadIcon, GlobeIcon, LinkedInIcon, MailIcon, WhatsAppIcon } from '@/components/Icons';
+import { BehanceIcon, CheckIcon, DownloadIcon, GlobeIcon, LinkedInIcon, MailIcon, WhatsAppIcon } from '@/components/Icons';
 
 export default async function Home({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
@@ -42,13 +41,20 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
             </div>
           </div>
 
-          <SideNav items={t.nav} label={t.navAria} />
+          <nav className="nav" aria-label={t.navAria}>
+            {t.nav.map((n, i) => (
+              <a key={n.href} href={n.href} aria-current={i === 0 ? 'true' : undefined}>
+                {n.label}
+              </a>
+            ))}
+          </nav>
 
           <h1 className="headline">
             {t.headline.map((line) => (
               <span key={line}>{line}</span>
             ))}
           </h1>
+          <p className="intro">{t.intro}</p>
 
           <div className="cta-row">
             <a className="btn btn-primary" href={links.whatsapp} target="_blank" rel="noopener noreferrer">
@@ -60,6 +66,16 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
               {t.ctaCv}
             </a>
           </div>
+
+          <ul className="proof">
+            {t.proof.map((p) => (
+              <li key={p}>
+                <CheckIcon />
+                <span>{p}</span>
+              </li>
+            ))}
+          </ul>
+
           <div className="sidebar-foot">
             <a className="pill-btn" href={`/${otherLocale}`} hrefLang={otherLocale} lang={otherLocale} aria-label={t.langAria}>
               <GlobeIcon />
@@ -90,7 +106,6 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
                 <span className="eyebrow">{t.aboutEyebrow}</span>
                 <h2 className="h2">{t.aboutTitle}</h2>
               </header>
-              <p className="lead">{t.intro}</p>
               <div className="two-col">
                 <p>{t.about1}</p>
                 <p>{t.about2}</p>

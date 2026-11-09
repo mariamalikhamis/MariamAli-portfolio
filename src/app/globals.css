@@ -872,23 +872,4 @@ html:not(.js) .tl-item.is-now::before { background: var(--online); border-color:
   .tl-item::before { background: var(--text) !important; border-color: var(--text) !important; }
   .tl-item.is-now::before { background: var(--online) !important; border-color: var(--online) !important; }
 }
-
-/* ───────────────────────── Side nav (large vertical list) ───────────────────────── */
-.sidenav { display: flex; flex-direction: column; align-items: flex-start; gap: 2px; }
-.sidenav a {
-  font-size: 32px; line-height: 1.2; font-weight: 500; letter-spacing: -0.02em;
-  color: color-mix(in srgb, var(--muted) 70%, var(--bg));
-  padding-block: 2px; transition: color .25s ease, transform .35s var(--ease-out);
-}
-[dir='rtl'] .sidenav a { letter-spacing: 0; line-height: 1.45; font-size: 30px; }
-.sidenav a:hover { color: var(--muted); }
-.sidenav a[aria-current='true'] { color: var(--text); }
-@media (hover: hover) { .sidenav a:hover { transform: translateX(4px); } [dir='rtl'] .sidenav a:hover { transform: translateX(-4px); } }
-/* Mobile: the sidebar stacks on top, so keep the nav compact and horizontal */
-@media (max-width: 1023px) {
-  .sidenav { flex-direction: row; gap: 18px; overflow-x: auto; scrollbar-width: none; }
-  .sidenav::-webkit-scrollbar { display: none; }
-  .sidenav a, [dir='rtl'] .sidenav a { flex: none; font-size: 20px; }
-}
-.lead { font-size: clamp(19px, 2vw, 22px); line-height: 1.5; font-weight: 500; max-width: 760px; }
 .tl { max-width: 720px; }
