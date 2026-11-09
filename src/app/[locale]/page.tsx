@@ -1,3 +1,4 @@
+import type React from 'react';
 import { notFound } from 'next/navigation';
 import { dictionaries, isLocale, links } from '@/content/i18n';
 import { projects } from '@/content/projects';
@@ -141,27 +142,53 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
 
             <section id="experience" className="section" data-reveal>
               <header className="section-head">
-                <span className="eyebrow">{t.expEyebrow}</span>
-                <h2 className="h2">{t.expTitle}</h2>
+                <span className="eyebrow">{t.timelineEyebrow}</span>
+                <h2 className="h2">{t.timelineTitle}</h2>
               </header>
-              <div>
-                {t.exp.map((x) => (
-                  <div key={x.org} className="exp-row">
-                    <span className="exp-when">{x.when}</span>
-                    <div className="exp-main">
-                      {'href' in x && x.href ? (
-                        <a className="exp-org exp-org-link" href={x.href} target="_blank" rel="noopener noreferrer">
-                          {x.org}
-                          <span aria-hidden="true"> ↗</span>
-                        </a>
-                      ) : (
-                        <span className="exp-org">{x.org}</span>
-                      )}
-                      <span className="exp-role">{x.role}</span>
-                      <span className="exp-body">{x.body}</span>
-                    </div>
-                  </div>
-                ))}
+              <div className="timeline-grid">
+                <div className="tl-col">
+                  <h3 className="tl-heading">{t.expHeading}</h3>
+                  <ol className="tl" data-reveal style={{ '--n': t.exp.length } as React.CSSProperties}>
+                    {t.exp.map((x, i) => (
+                      <li key={x.org} className={x.now ? 'tl-item is-now' : 'tl-item'} style={{ '--i': t.exp.length - 1 - i } as React.CSSProperties}>
+                        <span className="tl-when">
+                          {x.when}
+                          {x.now ? <span className="tl-now">{t.nowTag}</span> : null}
+                        </span>
+                        <span className="tl-title">{x.role}</span>
+                        {'href' in x && x.href ? (
+                          <a className="tl-org exp-org-link" href={x.href} target="_blank" rel="noopener noreferrer">
+                            {x.org}
+                            <span aria-hidden="true"> ↗</span>
+                          </a>
+                        ) : (
+                          <span className="tl-org">{x.org}</span>
+                        )}
+                        <span className="tl-body">{x.body}</span>
+                        <span className="tl-tags">
+                          {x.tags.map((g) => (
+                            <span key={g} className="tag">
+                              {g}
+                            </span>
+                          ))}
+                        </span>
+                      </li>
+                    ))}
+                  </ol>
+                </div>
+                <div className="tl-col">
+                  <h3 className="tl-heading">{t.eduHeading}</h3>
+                  <ol className="tl tl-edu" data-reveal style={{ '--n': t.edu.length } as React.CSSProperties}>
+                    {t.edu.map((x, i) => (
+                      <li key={x.title + x.org} className="tl-item" style={{ '--i': t.edu.length - 1 - i } as React.CSSProperties}>
+                        <span className="tl-when">{x.when}</span>
+                        <span className="tl-title">{x.title}</span>
+                        <span className="tl-org">{x.org}</span>
+                        {x.note ? <span className="tl-body">{x.note}</span> : null}
+                      </li>
+                    ))}
+                  </ol>
+                </div>
               </div>
             </section>
 

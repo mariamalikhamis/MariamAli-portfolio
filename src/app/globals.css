@@ -822,3 +822,53 @@ html.js [data-reveal].is-visible {
 .exp-org-link { text-decoration: underline; text-decoration-color: var(--border); text-underline-offset: 4px; }
 .exp-org-link:hover { text-decoration-color: currentColor; }
 .exp-org-link span { color: var(--muted); font-size: .85em; }
+
+/* ───────────────────────── Timeline ───────────────────────── */
+.timeline-grid { display: grid; gap: 56px; }
+@media (min-width: 900px) { .timeline-grid { grid-template-columns: 1.25fr 1fr; gap: 56px; } }
+.tl-col { display: flex; flex-direction: column; gap: 24px; }
+.tl-heading { font-size: 13px; font-weight: 600; letter-spacing: var(--track-label); text-transform: uppercase; color: var(--muted); }
+.tl { --step: 0.55s; position: relative; display: flex; flex-direction: column; gap: 36px; padding-inline-start: 28px; }
+/* track + animated progress line (fills from the oldest entry up to the current one) */
+.tl::before,
+.tl::after { content: ''; position: absolute; inset-inline-start: 5px; top: 8px; bottom: 8px; width: 1px; background: var(--border-strong); }
+.tl::after { width: 2px; inset-inline-start: 4.5px; background: var(--text); transform-origin: 50% 100%; transform: scaleY(0); }
+.tl-item { position: relative; display: flex; flex-direction: column; gap: 4px; }
+.tl-item::before {
+  content: ''; position: absolute; z-index: 1; inset-inline-start: -28px; top: 6px; width: 11px; height: 11px; border-radius: 50%;
+  background: var(--bg); border: 2px solid var(--border-strong);
+  transition: background-color .3s ease, border-color .3s ease, transform .4s var(--ease-out);
+}
+.tl-when { display: inline-flex; align-items: center; gap: 10px; font-size: 13px; font-weight: 500; color: var(--muted); font-variant-numeric: tabular-nums; }
+.tl-now { padding: 2px 8px; border-radius: var(--radius-pill); background: var(--text); color: var(--bg); font-size: 11px; font-weight: 600; letter-spacing: .04em; text-transform: uppercase; }
+[dir='rtl'] .tl-now { letter-spacing: 0; }
+.tl-title { font-size: 19px; font-weight: 600; line-height: var(--lh-head); margin-top: 4px; }
+.tl-org { font-size: 15px; font-weight: 500; }
+.tl-body { font-size: 15px; color: var(--muted); margin-top: 4px; }
+.tl-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 10px; }
+.tl-tags .tag { height: 26px; color: var(--muted); }
+.tl-edu .tl-title { font-size: 17px; }
+
+/* Animation: line grows upward, each dot fills as the line reaches it, then the current role pulses */
+html.js .tl.is-visible::after { animation: tlFill calc(var(--step) * (var(--n) - 1)) cubic-bezier(.45, 0, .2, 1) .3s forwards; }
+html.js .tl.is-visible .tl-item::before {
+  animation: tlDot .45s var(--ease-out) forwards;
+  animation-delay: calc(.3s + var(--step) * var(--i));
+}
+html.js .tl.is-visible .tl-item.is-now::before {
+  animation: tlDotNow .5s var(--ease-out) forwards, tlPulse 2.4s ease-out infinite;
+  animation-delay: calc(.3s + var(--step) * var(--i)), calc(.8s + var(--step) * var(--i));
+}
+@keyframes tlFill { to { transform: scaleY(1); } }
+@keyframes tlDot { 0% { transform: scale(1); } 50% { transform: scale(1.35); } 100% { transform: scale(1); background: var(--text); border-color: var(--text); } }
+@keyframes tlDotNow { 0% { transform: scale(1); } 50% { transform: scale(1.4); } 100% { transform: scale(1); background: var(--online); border-color: var(--online); } }
+@keyframes tlPulse { 0% { box-shadow: 0 0 0 0 color-mix(in srgb, var(--online) 45%, transparent); } 70%, 100% { box-shadow: 0 0 0 9px transparent; } }
+/* Final state without JS or with reduced motion */
+html:not(.js) .tl::after { transform: scaleY(1); }
+html:not(.js) .tl-item::before { background: var(--text); border-color: var(--text); }
+html:not(.js) .tl-item.is-now::before { background: var(--online); border-color: var(--online); }
+@media (prefers-reduced-motion: reduce) {
+  .tl::after { transform: scaleY(1); }
+  .tl-item::before { background: var(--text) !important; border-color: var(--text) !important; }
+  .tl-item.is-now::before { background: var(--online) !important; border-color: var(--online) !important; }
+}
