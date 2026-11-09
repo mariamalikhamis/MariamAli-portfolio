@@ -5,7 +5,7 @@ import { projects } from '@/content/projects';
 import ProjectCard from '@/components/ProjectCard';
 import ThemeToggle from '@/components/ThemeToggle';
 import Reveal from '@/components/Reveal';
-import { BehanceIcon, CheckIcon, DownloadIcon, GlobeIcon, LinkedInIcon, MailIcon, WhatsAppIcon } from '@/components/Icons';
+import { BehanceIcon, DownloadIcon, GlobeIcon, LinkedInIcon, MailIcon, WhatsAppIcon } from '@/components/Icons';
 
 export default async function Home({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
@@ -66,16 +66,6 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
               {t.ctaCv}
             </a>
           </div>
-
-          <ul className="proof">
-            {t.proof.map((p) => (
-              <li key={p}>
-                <CheckIcon />
-                <span>{p}</span>
-              </li>
-            ))}
-          </ul>
-
           <div className="sidebar-foot">
             <a className="pill-btn" href={`/${otherLocale}`} hrefLang={otherLocale} lang={otherLocale} aria-label={t.langAria}>
               <GlobeIcon />
