@@ -62,6 +62,8 @@ export const projects: Project[] = [
     cover: '/covers/iave.webp',
     fit: 'contain',
     bg: '#26252D',
+    href: 'https://wvc2027.ghadan.sa/',
+    linkLabel: 'live',
     copy: {
       en: {
         title: 'IAVE World Volunteer Conference Platform',

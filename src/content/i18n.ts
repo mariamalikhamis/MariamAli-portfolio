@@ -55,9 +55,9 @@ const en = {
   aboutEyebrow: 'About',
   aboutTitle: 'I start with the system, then the screen',
   about1:
-    'I studied Production Engineering, and it still shapes how I design: I map the users, constraints and business goals before I open Figma. I then joined ITI’s intensive UI/UX Design Track.',
+    'I have a B.Sc. in Production and Industrial Engineering, then joined ITI’s intensive UI/UX Design Track.',
   about2:
-    'For the past three years I have designed merchant platforms, dashboards and conference sites for Saudi companies, and products for clients in Egypt, Germany and the US. I work closely with developers, product managers and stakeholders, and I hand off designs that are ready to build.',
+    'For the past three years I have designed merchant platforms, dashboards and conference sites for Saudi companies, and products for clients in Egypt, Germany and the US. I work closely with developers, product managers and stakeholders.',
   quote:
     '“Good design isn’t only about making things look better. It’s about making them work better, feel intuitive, and create real value for the people who use them.”',
   expertiseTitle: 'What I bring',
@@ -130,9 +130,9 @@ const ar: Dict = {
   aboutEyebrow: 'نبذة',
   aboutTitle: 'أبدأ بالنظام، ثم بالشاشة',
   about1:
-    'درستُ هندسة الإنتاج، وما زالت تؤثر في طريقة تصميمي: أرسم صورة كاملة للمستخدمين والقيود وأهداف العمل قبل أن أفتح Figma. ثم التحقتُ بمسار تصميم UI/UX المكثف في معهد تكنولوجيا المعلومات (ITI).',
+    'حاصلة على بكالوريوس هندسة الإنتاج والهندسة الصناعية، ثم التحقتُ بمسار تصميم UI/UX المكثف في معهد تكنولوجيا المعلومات (ITI).',
   about2:
-    'خلال السنوات الثلاث الماضية صممت منصات للتجار ولوحات تحكم ومواقع مؤتمرات لشركات سعودية، ومنتجات لعملاء في مصر وألمانيا والولايات المتحدة. أعمل عن قرب مع المطورين ومديري المنتجات وأصحاب المصلحة، وأسلّم تصاميم جاهزة للتنفيذ.',
+    'خلال السنوات الثلاث الماضية صممت منصات للتجار ولوحات تحكم ومواقع مؤتمرات لشركات سعودية، ومنتجات لعملاء في مصر وألمانيا والولايات المتحدة. أعمل عن قرب مع المطورين ومديري المنتجات وأصحاب المصلحة.',
   quote:
     '«التصميم الجيد لا يعني أن يبدو المنتج أجمل فقط، بل أن يعمل بشكل أفضل، ويكون سهل الاستخدام، ويصنع قيمة حقيقية لمن يستخدمه.»',
   expertiseTitle: 'ما أقدمه',
