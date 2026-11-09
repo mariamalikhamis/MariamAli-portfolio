@@ -5,7 +5,8 @@ import { projects } from '@/content/projects';
 import ProjectCard from '@/components/ProjectCard';
 import ThemeToggle from '@/components/ThemeToggle';
 import Reveal from '@/components/Reveal';
-import { BehanceIcon, CheckIcon, DownloadIcon, GlobeIcon, LinkedInIcon, MailIcon, WhatsAppIcon } from '@/components/Icons';
+import SideNav from '@/components/SideNav';
+import { BehanceIcon, DownloadIcon, GlobeIcon, LinkedInIcon, MailIcon, WhatsAppIcon } from '@/components/Icons';
 
 export default async function Home({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
@@ -41,20 +42,13 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
             </div>
           </div>
 
-          <nav className="nav" aria-label={t.navAria}>
-            {t.nav.map((n, i) => (
-              <a key={n.href} href={n.href} aria-current={i === 0 ? 'true' : undefined}>
-                {n.label}
-              </a>
-            ))}
-          </nav>
+          <SideNav items={t.nav} label={t.navAria} />
 
           <h1 className="headline">
             {t.headline.map((line) => (
               <span key={line}>{line}</span>
             ))}
           </h1>
-          <p className="intro">{t.intro}</p>
 
           <div className="cta-row">
             <a className="btn btn-primary" href={links.whatsapp} target="_blank" rel="noopener noreferrer">
@@ -66,16 +60,6 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
               {t.ctaCv}
             </a>
           </div>
-
-          <ul className="proof">
-            {t.proof.map((p) => (
-              <li key={p}>
-                <CheckIcon />
-                <span>{p}</span>
-              </li>
-            ))}
-          </ul>
-
           <div className="sidebar-foot">
             <a className="pill-btn" href={`/${otherLocale}`} hrefLang={otherLocale} lang={otherLocale} aria-label={t.langAria}>
               <GlobeIcon />
@@ -106,6 +90,7 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
                 <span className="eyebrow">{t.aboutEyebrow}</span>
                 <h2 className="h2">{t.aboutTitle}</h2>
               </header>
+              <p className="lead">{t.intro}</p>
               <div className="two-col">
                 <p>{t.about1}</p>
                 <p>{t.about2}</p>
@@ -142,12 +127,9 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
 
             <section id="experience" className="section" data-reveal>
               <header className="section-head">
-                <span className="eyebrow">{t.timelineEyebrow}</span>
-                <h2 className="h2">{t.timelineTitle}</h2>
+                <span className="eyebrow">{t.expEyebrow}</span>
+                <h2 className="h2">{t.expTitle}</h2>
               </header>
-              <div className="timeline-grid">
-                <div className="tl-col">
-                  <h3 className="tl-heading">{t.expHeading}</h3>
                   <ol className="tl" data-reveal style={{ '--n': t.exp.length } as React.CSSProperties}>
                     {t.exp.map((x, i) => (
                       <li key={x.org} className={x.now ? 'tl-item is-now' : 'tl-item'} style={{ '--i': t.exp.length - 1 - i } as React.CSSProperties}>
@@ -175,9 +157,13 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
                       </li>
                     ))}
                   </ol>
-                </div>
-                <div className="tl-col">
-                  <h3 className="tl-heading">{t.eduHeading}</h3>
+            </section>
+
+            <section id="education" className="section" data-reveal>
+              <header className="section-head">
+                <span className="eyebrow">{t.eduEyebrow}</span>
+                <h2 className="h2">{t.eduTitle}</h2>
+              </header>
                   <ol className="tl tl-edu" data-reveal style={{ '--n': t.edu.length } as React.CSSProperties}>
                     {t.edu.map((x, i) => (
                       <li key={x.title + x.org} className="tl-item" style={{ '--i': t.edu.length - 1 - i } as React.CSSProperties}>
@@ -188,8 +174,6 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
                       </li>
                     ))}
                   </ol>
-                </div>
-              </div>
             </section>
 
             <section id="contact" className="contact" data-reveal>
