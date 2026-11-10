@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef, useState, type ReactNode } from 'react';
 
 type Item = { label: string; href: string };
 
@@ -8,9 +8,11 @@ type Item = { label: string; href: string };
 export default function PageRail({
   items,
   labels,
+  footer,
 }: {
   items: Item[];
   labels: { aria: string; open: string; close: string; title: string };
+  footer?: ReactNode;
 }) {
   const [active, setActive] = useState(items[0]?.href ?? '');
   const [open, setOpen] = useState(false);
@@ -86,6 +88,7 @@ export default function PageRail({
             </li>
           ))}
         </ol>
+        {footer ? <div className="rail-footer">{footer}</div> : null}
       </div>
     </div>
   );

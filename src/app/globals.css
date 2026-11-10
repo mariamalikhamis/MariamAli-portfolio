@@ -979,3 +979,8 @@ html:not([dir='rtl']) .cs-title, html:not([dir='rtl']) .two-col, html:not([dir='
 @keyframes railIn { from { opacity: 0; transform: translateY(12px); } }
 @keyframes panelIn { from { opacity: 0; transform: scale(.92); } }
 @keyframes itemIn { from { opacity: 0; transform: translateY(6px); } }
+/* Mobile: language + theme live inside the menu card */
+@media (max-width: 1023px) {
+  .sidebar > .sidebar-foot { display: none; }
+  .rail-footer { display: flex; justify-content: space-between; align-items: center; padding-top: 12px; margin-top: 4px; border-top: 1px solid var(--border); }
+}

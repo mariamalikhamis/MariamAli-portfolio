@@ -208,6 +208,15 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
       <PageRail
         items={t.nav}
         labels={{ aria: t.navAria, open: t.railOpen, close: t.railClose, title: t.railTitle }}
+        footer={
+          <>
+            <a className="pill-btn" href={`/${otherLocale}`} hrefLang={otherLocale} lang={otherLocale} aria-label={t.langAria}>
+              <GlobeIcon />
+              {t.langSwitch}
+            </a>
+            <ThemeToggle toDark={t.themeToDark} toLight={t.themeToLight} />
+          </>
+        }
       />
     </>
   );
