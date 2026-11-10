@@ -166,8 +166,11 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
               </header>
                   <ol className="tl tl-edu" data-reveal style={{ '--n': t.edu.length } as React.CSSProperties}>
                     {t.edu.map((x, i) => (
-                      <li key={x.title + x.org} className="tl-item" style={{ '--i': t.edu.length - 1 - i } as React.CSSProperties}>
-                        <span className="tl-when">{x.when}</span>
+                      <li key={x.title + x.org} className={x.now ? 'tl-item is-now' : 'tl-item'} style={{ '--i': t.edu.length - 1 - i } as React.CSSProperties}>
+                        <span className="tl-when">
+                          {x.when}
+                          {x.now ? <span className="tl-now">{t.inProgress}</span> : null}
+                        </span>
                         <span className="tl-title">{x.title}</span>
                         <span className="tl-org">{x.org}</span>
                         {x.note ? <span className="tl-body">{x.note}</span> : null}
