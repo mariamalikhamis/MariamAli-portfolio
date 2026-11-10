@@ -1,7 +1,8 @@
 import type { Metadata, Viewport } from 'next';
 import { notFound } from 'next/navigation';
 import '@fontsource-variable/inter';
-import '@fontsource-variable/newsreader/opsz.css';
+import '@fontsource/tinos/latin-400.css';
+import '@fontsource/tinos/latin-400-italic.css';
 import '@fontsource/ibm-plex-sans-arabic/arabic-300.css';
 import '@fontsource/ibm-plex-sans-arabic/arabic-400.css';
 import '@fontsource/ibm-plex-sans-arabic/arabic-500.css';
@@ -53,7 +54,7 @@ export default async function LocaleLayout({ children, params }: { children: Rea
     <html lang={locale} dir={locale === 'ar' ? 'rtl' : 'ltr'} suppressHydrationWarning>
       <head>
         <script dangerouslySetInnerHTML={{ __html: themeScript }} />
-        <style>{`:root{--font-latin:'Inter Variable';--font-arabic:'IBM Plex Sans Arabic';--font-serif:'Newsreader Variable'}`}</style>
+        <style>{`:root{--font-latin:'Inter Variable';--font-arabic:'IBM Plex Sans Arabic';--font-serif:'Times New Roman'}`}</style>
       </head>
       <body>{children}</body>
     </html>

@@ -880,7 +880,8 @@ html:not(.js) .tl-item.is-now::before { background: var(--online); border-color:
   --text: #111111; --muted: #6e6e6a; --faint: #a6a6a2;
   --border: #e7e6e2; --border-strong: #c9c8c3;
   --accent: #111111; --accent-soft: #f3f2ef; --online: #2f9e5b;
-  --serif: var(--font-serif), 'Times New Roman', serif;
+  /* Times New Roman where installed (Windows, macOS, iOS); Tinos is its metric-compatible twin for Android/Linux */
+  --serif: 'Times New Roman', Times, 'Tinos', serif;
 }
 [data-theme='dark'] {
   --bg: #0b0b0b; --panel: #0b0b0b; --surface: #121212; --surface-2: #1b1b1a;
@@ -890,8 +891,8 @@ html:not(.js) .tl-item.is-now::before { background: var(--online); border-color:
 html:not([dir='rtl']) .headline, html:not([dir='rtl']) .h2, html:not([dir='rtl']) .h3,
 html:not([dir='rtl']) .card-title, html:not([dir='rtl']) .tl-title, html:not([dir='rtl']) .contact h2,
 html:not([dir='rtl']) .quote, html:not([dir='rtl']) .tile-title, html:not([dir='rtl']) .step-title,
-html:not([dir='rtl']) .cs-title, html:not([dir='rtl']) .two-col, html:not([dir='rtl']) .intro {
-  font-family: var(--serif); font-optical-sizing: auto;
+html:not([dir='rtl']) .cs-title, html:not([dir='rtl']) .two-col {
+  font-family: var(--serif);
 }
 .headline, .h2, .h3, .card-title, .tl-title, .contact h2, .quote, .tile-title, .step-title, .cs-title { font-weight: 400; letter-spacing: -0.01em; }
 [dir='rtl'] .headline, [dir='rtl'] .h2, [dir='rtl'] .card-title, [dir='rtl'] .contact h2, [dir='rtl'] .cs-title { font-weight: 300; letter-spacing: 0; }
@@ -984,3 +985,4 @@ html:not([dir='rtl']) .cs-title, html:not([dir='rtl']) .two-col, html:not([dir='
   .sidebar > .sidebar-foot { display: none; }
   .rail-footer { display: flex; justify-content: space-between; align-items: center; padding-top: 12px; margin-top: 4px; border-top: 1px solid var(--border); }
 }
+button { font-family: inherit; }
