@@ -997,3 +997,5 @@ html:not([dir='rtl']) .quote { font-weight: 400; letter-spacing: -0.015em; }
 html:not([dir='rtl']) .card-title { font-size: 22px; }
 html:not([dir='rtl']) .tile-title, html:not([dir='rtl']) .step-title { font-size: 18px; letter-spacing: -0.015em; }
 html:not([dir='rtl']) .tl-title { font-size: 20px; letter-spacing: -0.015em; }
+/* Arabic large headings: Regular (400) */
+[dir='rtl'] .headline, [dir='rtl'] .h2, [dir='rtl'] .card-title, [dir='rtl'] .contact h2, [dir='rtl'] .cs-title { font-weight: 400; }
