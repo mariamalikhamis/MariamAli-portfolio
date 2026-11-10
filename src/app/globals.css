@@ -907,7 +907,8 @@ html:not([dir='rtl']) .cs-title, html:not([dir='rtl']) .two-col, html:not([dir='
 .tl-edu .tl-title { font-size: 20px; }
 .contact h2 { font-size: clamp(28px, 3.4vw, 42px); line-height: 1.15; }
 .eyebrow { color: var(--text); }
-.tag-market { background: var(--surface-2); color: var(--text); }
+.tag-market { background: rgba(31, 111, 92, 0.09); color: #1f6f5c; font-weight: 600; }
+[data-theme='dark'] .tag-market { background: rgba(111, 214, 181, 0.14); color: #6fd6b5; }
 
 /* ═════════════════ Desktop: horizontal numbered nav in the sidebar ═════════════════ */
 .side-index { display: none; }
