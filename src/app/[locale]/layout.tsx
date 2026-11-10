@@ -1,8 +1,6 @@
 import type { Metadata, Viewport } from 'next';
 import { notFound } from 'next/navigation';
 import '@fontsource-variable/inter';
-import '@fontsource/tinos/latin-400.css';
-import '@fontsource/tinos/latin-400-italic.css';
 import '@fontsource/ibm-plex-sans-arabic/arabic-300.css';
 import '@fontsource/ibm-plex-sans-arabic/arabic-400.css';
 import '@fontsource/ibm-plex-sans-arabic/arabic-500.css';
