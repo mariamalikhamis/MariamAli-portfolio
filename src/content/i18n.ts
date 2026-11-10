@@ -28,6 +28,10 @@ const en = {
   themeToDark: 'Switch to dark mode',
   themeToLight: 'Switch to light mode',
   navAria: 'Sections',
+  railOpen: 'Open page index',
+  railClose: 'Close index',
+  railTitle: 'On this page',
+  railExtra: { label: 'Education', href: '#education', after: '#experience' },
   skipLink: 'Skip to content',
   nav: [
     { label: 'Work', href: '#works' },
@@ -115,6 +119,10 @@ const ar: Dict = {
   themeToDark: 'التبديل إلى الوضع الداكن',
   themeToLight: 'التبديل إلى الوضع الفاتح',
   navAria: 'الأقسام',
+  railOpen: 'فتح فهرس الصفحة',
+  railClose: 'إغلاق الفهرس',
+  railTitle: 'في هذه الصفحة',
+  railExtra: { label: 'التعليم', href: '#education', after: '#experience' },
   skipLink: 'انتقل إلى المحتوى',
   nav: [
     { label: 'الأعمال', href: '#works' },

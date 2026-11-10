@@ -5,6 +5,8 @@ import { projects } from '@/content/projects';
 import ProjectCard from '@/components/ProjectCard';
 import ThemeToggle from '@/components/ThemeToggle';
 import Reveal from '@/components/Reveal';
+import PageRail from '@/components/PageRail';
+import SideIndex from '@/components/SideIndex';
 import { BehanceIcon, DownloadIcon, GlobeIcon, LinkedInIcon, MailIcon, WhatsAppIcon } from '@/components/Icons';
 
 export default async function Home({ params }: { params: Promise<{ locale: string }> }) {
@@ -40,14 +42,7 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
               </a>
             </div>
           </div>
-
-          <nav className="nav" aria-label={t.navAria}>
-            {t.nav.map((n, i) => (
-              <a key={n.href} href={n.href} aria-current={i === 0 ? 'true' : undefined}>
-                {n.label}
-              </a>
-            ))}
-          </nav>
+          <SideIndex title={t.railTitle} label={t.navAria} items={t.nav} />
 
           <h1 className="headline">
             {t.headline.map((line) => (
@@ -207,6 +202,10 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
           </div>
         </main>
       </div>
+      <PageRail
+        items={t.nav}
+        labels={{ aria: t.navAria, open: t.railOpen, close: t.railClose, title: t.railTitle }}
+      />
     </>
   );
 }
